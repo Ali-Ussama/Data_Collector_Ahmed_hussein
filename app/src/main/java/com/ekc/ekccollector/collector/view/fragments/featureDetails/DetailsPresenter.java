@@ -1,4 +1,4 @@
-package com.ekc.ekccollector.collector.view.fragments.editFragmentNew;
+package com.ekc.ekccollector.collector.view.fragments.featureDetails;
 
 public class DetailsPresenter {
 }
