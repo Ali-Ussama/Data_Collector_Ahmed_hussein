@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/map_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.esri.arcgisruntime.mapping.view.MapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/rlFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.esri.arcgisruntime.mapping.view.MapView>
+
+        <LinearLayout
+            android:id="@+id/rlLatLong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="#bd000000"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvLatLong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/compass"
+            style="@style/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_compass"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rlLatLong" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabFullScreen"
+            style="@style/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/compass"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:src="@drawable/ic_fullscreen_white_24dp"
+            app:borderWidth="0dp"
+            app:elevation="0dp"
+            app:fabSize="mini"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/compass" />
+
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fab_measure"
+            style="@style/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layoutDirection="locale"
+            android:padding="0dp"
+            android:src="@drawable/ic_add_location_white_24dp"
+            app:borderWidth="0dp"
+            app:elevation="0dp"
+            app:layout_constraintStart_toStartOf="@+id/fabFullScreen"
+            app:layout_constraintTop_toBottomOf="@+id/fabFullScreen"
+            app:menu_animationDelayPerItem="55"
+            app:menu_backgroundColor="@android:color/transparent"
+            app:menu_buttonSpacing="0dp"
+            app:menu_colorNormal="@color/colorAccent"
+            app:menu_colorPressed="@color/colorPrimaryDark"
+            app:menu_colorRipple="#99d4d4d4"
+            app:menu_fab_size="mini"
+            app:menu_icon="@drawable/ruler"
+            app:menu_labels_colorNormal="@color/colorAccent"
+            app:menu_labels_colorPressed="@color/colorPrimaryDark"
+            app:menu_labels_colorRipple="@color/white"
+            app:menu_labels_ellipsize="none"
+            app:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+            app:menu_labels_position="right"
+            app:menu_labels_showAnimation="@anim/fab_slide_in_from_left"
+            app:menu_labels_showShadow="false"
+            app:menu_labels_singleLine="true"
+            app:menu_labels_textColor="#fff"
+            app:menu_labels_textSize="15sp"
+            app:menu_openDirection="down"
+            app:menu_showShadow="false">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_measure_distance"
+                style="@style/MenuButtonsStyle"
+                android:src="@drawable/ic_linear_scale_black_24dp"
+                app:fab_label="Distance"
+                app:fab_size="mini" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_measure_area"
+                style="@style/MenuButtonsStyle"
+                android:src="@drawable/rounded_ic_poles"
+                android:visibility="gone"
+                app:fab_label="Area"
+                app:fab_size="mini" />
+
+        </com.github.clans.fab.FloatingActionMenu>
+
+        <!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+        <!--            android:id="@+id/fabMeasure"-->
+        <!--            style="@style/floating_action_button"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_marginBottom="@dimen/activity_vertical_margin"-->
+        <!--            android:src="@drawable/ruler"-->
+        <!--            app:borderWidth="0dp"-->
+        <!--            app:elevation="0dp"-->
+        <!--            app:fabSize="normal"-->
+        <!--            app:layout_constraintBottom_toTopOf="@+id/fabLocation"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent" />-->
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabLocation"
+            style="@style/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:src="@drawable/ic_my_location_white_24dp"
+            app:borderWidth="0dp"
+            app:elevation="0dp"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fab_general"
+            style="@style/floating_action_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/fabLocation"
+            android:layout_marginBottom="10dp"
+            android:layoutDirection="locale"
+            android:padding="0dp"
+            android:src="@drawable/ic_add_location_white_24dp"
+            android:visibility="visible"
+            app:borderWidth="0dp"
+            app:elevation="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/fabLocation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:menu_animationDelayPerItem="55"
+            app:menu_backgroundColor="@android:color/transparent"
+            app:menu_buttonSpacing="0dp"
+            app:menu_colorNormal="@color/colorPrimary"
+            app:menu_colorPressed="@color/colorPrimaryDark"
+            app:menu_colorRipple="#99d4d4d4"
+            app:menu_fab_size="normal"
+            app:menu_icon="@drawable/ic_action_add"
+            app:menu_labels_colorNormal="@color/colorPrimary"
+            app:menu_labels_colorPressed="@color/colorPrimaryDark"
+            app:menu_labels_colorRipple="#66efecec"
+            app:menu_labels_cornerRadius="3dp"
+            app:menu_labels_ellipsize="none"
+            app:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+            app:menu_labels_margin="0dp"
+            app:menu_labels_maxLines="-1"
+            app:menu_labels_padding="8dp"
+            app:menu_labels_position="left"
+            app:menu_labels_showAnimation="@anim/fab_slide_in_from_right"
+            app:menu_labels_showShadow="false"
+            app:menu_labels_singleLine="true"
+            app:menu_labels_textColor="#fff"
+            app:menu_labels_textSize="15sp"
+            app:menu_openDirection="up"
+            app:menu_showShadow="false">
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_add_distribution_box"
+                style="@style/MenuButtonsStyle"
+                android:src="@drawable/rounded_ic_dist_box"
+                app:fab_label="مربع توزيع" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_add_poles"
+                style="@style/MenuButtonsStyle"
+                android:src="@drawable/rounded_ic_poles"
+                app:fab_label="عمود كهربائى" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_add_rmu"
+                style="@style/MenuButtonsStyle"
+                android:src="@drawable/rounded_ic_rmu"
+                app:fab_label="حلقة وحدة رئيسية" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_add_sub_station"
+                style="@style/MenuButtonsStyle"
+                android:src="@drawable/rounded_ic_substation"
+                app:fab_label="محطة فرعية" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_add_ocl_meter"
+                style="@style/MenuButtonsStyle"
+                android:src="@drawable/rounded_ocl_meter"
+                app:fab_label="عداد كهرباء" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_add_service_point"
+                style="@style/MenuButtonsStyle"
+                android:src="@drawable/rounded_service_point"
+                android:visibility="gone"
+                app:fab_label="نقطة الخدمة" />
+        </com.github.clans.fab.FloatingActionMenu>
+
+        <LinearLayout
+            android:id="@+id/linear_layers_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlLatLong"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/border"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/compass">
+
+            <TextView
+                android:id="@+id/tv_more_layer_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/more_info"
+                android:textColor="#ee3836"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/linear_layers_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_new_point"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/rounded_ic_dist_box"
+                    android:drawablePadding="10dp"
+                    android:gravity="start"
+                    android:text="@string/distribution_box_lbl" />
+
+                <TextView
+                    android:id="@+id/tv_edit_point"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/rounded_ic_poles"
+                    android:drawablePadding="10dp"
+                    android:gravity="start"
+                    android:text="@string/fcl_poles_lbl" />
+
+                <TextView
+                    android:id="@+id/tv_gcs_point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/rounded_ic_rmu"
+                    android:drawablePadding="10dp"
+                    android:gravity="start"
+                    android:text="@string/fcl_rmu_lbl" />
+
+                <TextView
+                    android:id="@+id/tv_new_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/rounded_ic_substation"
+                    android:drawablePadding="10dp"
+                    android:gravity="start"
+                    android:text="@string/fcl_substation_lbl" />
+
+                <TextView
+                    android:id="@+id/tv_edit_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/rounded_ocl_meter"
+                    android:drawablePadding="10dp"
+                    android:gravity="start"
+                    android:text="@string/ocl_meter" />
+
+                <TextView
+                    android:id="@+id/tv_new_polygon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/rounded_service_point"
+                    android:drawablePadding="10dp"
+                    android:gravity="start"
+                    android:text="@string/service_point" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/measure_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlLatLong"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/border"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/compass">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/measure_function_value_in_meter_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="94"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/measure_function_equal_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:text="="
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/measure_function_in_meter_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:gravity="center"
+                    android:text="المسافة بالمتـــــــر"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/measure_function_value_in_km_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="94"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/measure_function_equal_in_km_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:text="="
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/measure_function_in_km_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="المسافة بالكيلومتر"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Adding bottom sheet after main content -->
+    <include
+        layout="@layout/map_select_point_bottom_sheet"
+        android:visibility="visible" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

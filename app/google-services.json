@@ -1,0 +1,130 @@
+{
+  "project_info": {
+    "project_number": "851080972902",
+    "firebase_url": "https://globalgeo-213000.firebaseio.com",
+    "project_id": "globalgeo-213000",
+    "storage_bucket": "globalgeo-213000.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851080972902:android:ae19e657ec7ef18b4ffba7",
+        "android_client_info": {
+          "package_name": "com.ekc.ekccollector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851080972902-nsrqcckcaf6ift2uucvneug1m70tcqp0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ekc.ekccollector",
+            "certificate_hash": "2e535fb298e212ec319306dccd4a238938756a4a"
+          }
+        },
+        {
+          "client_id": "851080972902-lu6opl1fpuam1g0gaur481okdrpbgt06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAazgHQ7HFjwatYZY9fCoKEbP7eonTE6RA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851080972902-lu6opl1fpuam1g0gaur481okdrpbgt06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851080972902:android:1abe892a1b82d756",
+        "android_client_info": {
+          "package_name": "com.example.aliussama.geotask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851080972902-q53fo3boihhnpjtuj37bsn1pb5cgsa7f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aliussama.geotask",
+            "certificate_hash": "2e535fb298e212ec319306dccd4a238938756a4a"
+          }
+        },
+        {
+          "client_id": "851080972902-sj9ifpo120m4pg8n0nshl1jj9fb8j984.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aliussama.geotask",
+            "certificate_hash": "6da74b1a273138d6fb940d286442bc12cd5a8945"
+          }
+        },
+        {
+          "client_id": "851080972902-lu6opl1fpuam1g0gaur481okdrpbgt06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAazgHQ7HFjwatYZY9fCoKEbP7eonTE6RA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851080972902-lu6opl1fpuam1g0gaur481okdrpbgt06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851080972902:android:fa87d70c000847664ffba7",
+        "android_client_info": {
+          "package_name": "com.example.ekccollector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851080972902-hm12hbf5irvcqeb6rldntk57eoodbagk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ekccollector",
+            "certificate_hash": "2e535fb298e212ec319306dccd4a238938756a4a"
+          }
+        },
+        {
+          "client_id": "851080972902-lu6opl1fpuam1g0gaur481okdrpbgt06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAazgHQ7HFjwatYZY9fCoKEbP7eonTE6RA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851080972902-lu6opl1fpuam1g0gaur481okdrpbgt06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

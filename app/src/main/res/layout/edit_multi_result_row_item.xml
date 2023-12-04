@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_8sdp"
+    android:id="@+id/edit_mulit_result_row_item_feature_container"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/edit_mulit_result_row_item_feature_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="4"
+        android:drawableLeft="@drawable/rounded_ic_substation"
+        android:drawablePadding="@dimen/_8sdp"
+        android:gravity="center"
+        android:text="@string/DISTRIBUTIONBOX_layer_name"
+        android:textSize="@dimen/_10ssp" />
+
+    <ImageView
+        android:id="@+id/edit_mulit_result_row_item_feature_edit_ic"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_weight="1"
+        android:src="@drawable/ic_edit_location_grey_24dp" />
+</LinearLayout>
