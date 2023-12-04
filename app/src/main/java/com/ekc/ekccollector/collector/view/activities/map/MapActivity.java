@@ -505,9 +505,8 @@ public class MapActivity extends AppCompatActivity implements SingleTapListener,
 
     private void initMap() {
         try {
-
             //Declaring baseMap
-            baseMap = new ArcGISMap(Basemap.createOpenStreetMap());
+            baseMap = new ArcGISMap(Basemap.createStreets());
             mapView.setMap(baseMap);
 
             pointCollection = new PointCollection(mapView.getSpatialReference());
