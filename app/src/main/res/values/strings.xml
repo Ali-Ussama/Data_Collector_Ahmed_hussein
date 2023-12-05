@@ -38,6 +38,7 @@
     <string name="index_services" translatable="false">http://196.218.181.250:6080/arcgis/rest/services/GCS_3857/FeatureServer/3</string>
     -->
     <!--    <string name="gcs_feature_server" translatable="false">http://196.218.181.250:6080/arcgis/rest/services/EKC/EKC_Collector/FeatureServer</string>-->
+    <string name="google_map_url" translatable="false">http://41.129.106.61:7080/PBS/rest/services/GoogleMapsImagery/MapServer</string>
     <string name="gcs_feature_server_test_substation_pl" translatable="false">http://41.129.106.61:6080/arcgis/rest/services/EKC/Collector_Substation_PL/FeatureServer</string>
 
     <string name="gcs_feature_server_test" translatable="false">http://41.129.106.61:6080/arcgis/rest/services/EKC/Collector/FeatureServer</string>

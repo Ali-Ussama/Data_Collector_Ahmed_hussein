@@ -77,6 +77,7 @@ import com.esri.arcgisruntime.geometry.Polyline;
 import com.esri.arcgisruntime.geometry.SpatialReference;
 import com.esri.arcgisruntime.geometry.SpatialReferences;
 import com.esri.arcgisruntime.layers.ArcGISMapImageLayer;
+import com.esri.arcgisruntime.layers.ArcGISTiledLayer;
 import com.esri.arcgisruntime.layers.FeatureLayer;
 import com.esri.arcgisruntime.loadable.LoadStatus;
 import com.esri.arcgisruntime.loadable.LoadStatusChangedEvent;
@@ -506,7 +507,16 @@ public class MapActivity extends AppCompatActivity implements SingleTapListener,
     private void initMap() {
         try {
             //Declaring baseMap
-            baseMap = new ArcGISMap(Basemap.createStreets());
+            Basemap basemap = new Basemap();
+
+            //Google Satellite Map
+            ArcGISTiledLayer tiledLayer = new ArcGISTiledLayer(getString(R.string.google_map_url));
+            basemap.getBaseLayers().add(tiledLayer);
+            baseMap = new ArcGISMap(basemap);
+
+            //Open Street Map
+            //baseMap = new ArcGISMap(Basemap.createStreets());
+
             mapView.setMap(baseMap);
 
             pointCollection = new PointCollection(mapView.getSpatialReference());
